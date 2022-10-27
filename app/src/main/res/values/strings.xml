@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PieceWorkApp</string>
+    <string name="username">UserName</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="fullname">FullName</string>
+    <string name="email">Email</string>
+    <string name="signup">SignUp</string>
+    <string name="signuphere">Dont have an account?<u>Sign up</u></string>
+
+</resources>

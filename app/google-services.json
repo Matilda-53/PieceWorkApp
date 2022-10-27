@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "74576948968",
+    "project_id": "pieceworkapp",
+    "storage_bucket": "pieceworkapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74576948968:android:5958b9ee2003326570e35d",
+        "android_client_info": {
+          "package_name": "com.example.pieceworkapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74576948968-a4o1ofi8dbfjhual1ammdqkf1fd4eg8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHaiHVBz0yBMnsPwdONb2nUSiRxCQ-spg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74576948968-a4o1ofi8dbfjhual1ammdqkf1fd4eg8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
