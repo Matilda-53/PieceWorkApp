@@ -5,22 +5,22 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home"
-            android:title="Home"
+            android:title="@string/home"
             android:icon="@drawable/ic_home" />
 
 
     <item android:id="@+id/createList"
-        android:title="Create List"
+        android:title="@string/create_list"
         android:icon="@drawable/ic_create_list">  </item>
 
         <item
             android:id="@+id/category"
-            android:title="Category"
+            android:title="@string/category"
             android:icon="@drawable/ic_category" />
 
         <item
             android:id="@+id/inbox"
-            android:title="Inbox"
+            android:title="@string/inbox"
             android:icon="@drawable/ic_inbox" />
 
         <item

@@ -2,10 +2,8 @@ package com.example.pieceworkapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -22,7 +20,6 @@ import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.ktx.Firebase;
 
 public class SignUP extends AppCompatActivity {
      TextView alreadyHaveAccount;
@@ -39,7 +36,7 @@ public class SignUP extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
          alreadyHaveAccount = (TextView) findViewById(R.id.alreadyHaveAccount);
-         fullname = (EditText) findViewById(R.id.fullname);
+         fullname = (EditText) findViewById(R.id.full_name);
          Email = (EditText) findViewById(R.id.email);
          Username2 = (EditText) findViewById(R.id.username2);
          Password1 = (EditText) findViewById(R.id.password1);
