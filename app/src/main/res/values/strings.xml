@@ -14,7 +14,7 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="register">Register</string>
     <string name="already_have_an_account">Already have an account?</string>
-    <string name="piecework" >MyPieceWork</string>
+    <string name="piecework">MyPieceWork</string>
     <string name="sign_up">Sign up</string>
     <string name="e_mail">Email</string>
     <string name="user_name">Username</string>
@@ -29,5 +29,7 @@
     <string name="log_in">LOG IN</string>
     <string name="create_new_account">Create new account?</string>
     <string name="my_piecework">MyPieceWork</string>
+    <string name="cate">CATEGORY</string>
+    <string name="in_box">INBOX</string>
 
 </resources>

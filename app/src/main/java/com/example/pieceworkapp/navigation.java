@@ -10,7 +10,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class navigation extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
+
+public class navigation extends AppCompatActivity  {
 
     private  DrawerLayout drawerLayout;
     @Override
@@ -18,7 +20,8 @@ public class navigation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
          drawerLayout =findViewById(R.id.nav_view);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+         Toolbar toolbar = findViewById(R.id.toolbar);
+        NavigationView navigationView = findViewById(R.id.navigation_view);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);

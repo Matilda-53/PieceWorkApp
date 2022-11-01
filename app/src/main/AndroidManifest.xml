@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.pieceworkapp" >
+    package="com.example.pieceworkapp">
 
     <application
         android:allowBackup="true"
@@ -14,9 +14,18 @@
         android:theme="@style/Theme.PieceWorkApp"
         tools:targetApi="31">
         <activity
+            android:name=".category"
+            android:exported="false" />
+        <activity
+            android:name=".createList"
+            android:exported="false" />
+        <activity
+            android:name=".Inbox"
+            android:exported="false" />
+        <activity
             android:name=".navigation"
             android:exported="false"
-            android:theme="@style/AppTheme.noActionBar"/>
+            android:theme="@style/AppTheme.noActionBar" />
         <activity
             android:name=".Home"
             android:exported="false" />
@@ -25,8 +34,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
