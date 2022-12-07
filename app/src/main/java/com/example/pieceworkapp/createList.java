@@ -1,11 +1,8 @@
 package com.example.pieceworkapp;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
-import com.example.pieceworkapp.databinding.ActivityCategoryBinding;
 import com.example.pieceworkapp.databinding.ActivityCreateListBinding;
 
 

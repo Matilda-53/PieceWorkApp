@@ -31,5 +31,6 @@
     <string name="my_piecework">MyPieceWork</string>
     <string name="cate">CATEGORY</string>
     <string name="in_box">INBOX</string>
+    <string name="create_List">CREATE LIST</string>
 
 </resources>

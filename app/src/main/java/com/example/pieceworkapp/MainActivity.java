@@ -1,16 +1,13 @@
 package com.example.pieceworkapp;
 
-import static android.app.ProgressDialog.show;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +21,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     EditText email, password;
     ProgressDialog progressDialog;
     Button loginbtn;
-    String emailPattern = "[a-zA-Z0-9,_-]+@[a-z]+\\.+[a-z]+";
+//    String emailPattern = "[a-zA-Z0-9,_-]+@[a-z]+\\.+[a-z]+";
     FirebaseAuth mAuth;
     FirebaseUser mUser;
 
@@ -49,22 +45,14 @@ public class MainActivity extends AppCompatActivity {
         mUser = mAuth.getCurrentUser();
         loginbtn = (MaterialButton) findViewById(R.id.logIN);
 
-        signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, SignUP.class));
-            }
-        });
+        signup.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, SignUP.class)));
 
 
         //admin
-        loginbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PerforLogin();
+        loginbtn.setOnClickListener(view -> {
+            PerforLogin();
 
-                //correct
-            }
+            //correct
         });
     }
 
