@@ -45,21 +45,21 @@ public class navigation extends AppCompatActivity implements NavigationView.OnNa
 
         switch (item.getItemId()){
 
-            case R.id.Home:
+            case R.id.home:
                 startActivity(new Intent(this, Home.class));
                 overridePendingTransition(0,0);
                 break;
-            case R.id.in_box:
+            case R.id.inbox:
                 startActivity(new Intent(this, Inbox.class));
                 overridePendingTransition(0,0);
                 break;
 
-            case R.id.list:
+            case R.id.createList:
                 startActivity(new Intent(this, createList.class));
                 overridePendingTransition(0,0);
                 break;
 
-            case R.id.cate:
+            case R.id.category:
                 startActivity(new Intent(this, category.class));
                 overridePendingTransition(0,0);
                 break;

@@ -9,6 +9,7 @@ import com.example.pieceworkapp.databinding.ActivityHomeBinding;
 
 public class category extends navigation {
       ActivityCategoryBinding activityCategoryBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
