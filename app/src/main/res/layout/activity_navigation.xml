@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".navigation"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     android:id="@+id/nav_view">

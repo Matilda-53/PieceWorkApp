@@ -4,11 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Inbox extends AppCompatActivity {
+import com.example.pieceworkapp.databinding.ActivityCategoryBinding;
+import com.example.pieceworkapp.databinding.ActivityInboxBinding;
 
+public class Inbox extends navigation {
+    ActivityInboxBinding activityInboxBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inbox);
+        activityInboxBinding = ActivityInboxBinding.inflate(getLayoutInflater());
+        setContentView(activityInboxBinding.getRoot());
+        allocateActivityTitle("Inbox");
     }
 }
