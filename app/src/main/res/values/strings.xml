@@ -32,5 +32,12 @@
     <string name="cate">CATEGORY</string>
     <string name="in_box">INBOX</string>
     <string name="create_List">CREATE LIST</string>
+    <string name="enter_your_details">Enter your details</string>
+    <string name="full_name">Full name:</string>
+    <string name="email_1">Email:</string>
+    <string name="enter_profession">Enter profession:</string>
+    <string name="choose_category">Choose category:</string>
+    <string name="years_of_experience">Years of experience:</string>
+    <string name="create_list1">Create List</string>
 
 </resources>

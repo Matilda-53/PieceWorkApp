@@ -12,7 +12,7 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter your details"
+        android:text="@string/enter_your_details"
         android:textColor="@color/black"
         android:gravity="center"
         android:paddingTop="15dp"
@@ -27,8 +27,8 @@
         android:layout_below="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Full name:"
-        android:textSize="20dp"
+        android:text="@string/full_name"
+        android:textSize="20sp"
         android:textColor="@color/black"
         android:paddingBottom="2sp"
         android:layout_marginStart="15sp"
@@ -50,7 +50,8 @@
         android:backgroundTint="@android:color/holo_blue_dark"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-     />
+        android:autofillHints=""
+         />
 
         <TextView
             android:id="@+id/mail"
@@ -61,8 +62,8 @@
             android:layout_marginStart="15sp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
-            android:text="Email:"
-            android:textSize="20dp"
+            android:text="@string/email_1"
+            android:textSize="20sp"
             tools:ignore="InvalidId,MissingConstraints" />
 
         <EditText
@@ -78,7 +79,8 @@
             android:backgroundTint="@android:color/holo_blue_dark"
             android:textColorHint="@color/black"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:autofillHints="" />
 
     <TextView
         android:id="@+id/contact"
@@ -87,7 +89,7 @@
         android:layout_height="wrap_content"
         android:text="Contact number:"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginStart="15sp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
@@ -113,9 +115,9 @@
         android:layout_below="@+id/conta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter profession:"
+        android:text="@string/enter_profession"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginStart="15sp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
@@ -135,16 +137,17 @@
         android:backgroundTint="@android:color/holo_blue_dark"
         android:textColorHint="@color/black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/catego"
         android:layout_below="@+id/professional"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose category:"
+        android:text="@string/choose_category"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginStart="15sp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
@@ -163,16 +166,17 @@
         android:backgroundTint="@android:color/holo_blue_dark"
         android:textColorHint="@color/black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/experience"
         android:layout_below="@+id/choose"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Years of experience:"
+        android:text="@string/years_of_experience"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginStart="15sp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
@@ -191,7 +195,8 @@
         android:backgroundTint="@android:color/holo_blue_dark"
         android:textColorHint="@color/black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:autofillHints="" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnRegister"
@@ -200,6 +205,6 @@
         android:layout_below="@id/Exp"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@android:color/holo_blue_dark"
-        android:text="Create List"
+        android:text="@string/create_list1"
         />
 </RelativeLayout>
