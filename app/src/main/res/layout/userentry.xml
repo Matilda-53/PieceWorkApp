@@ -4,11 +4,121 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation ="12dp"
-    app:cardCornerRadius="12dp">
+    app:cardCornerRadius="12dp"
+    android:layout_margin="16dp"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_person_outline_24"
+            android:layout_gravity="left"
+            android:orientation ="vertical"
+            >
+        </ImageView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:text="Name"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+            <TextView
+                android:id="@+id/mail"
+                android:layout_width="match_parent"
+                android:text="Name"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24dp"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="match_parent"
+                android:text="Name"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+            <TextView
+                android:id="@+id/pro"
+                android:layout_width="match_parent"
+                android:text="Name"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24dp">
+
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+            <TextView
+                android:id="@+id/gory"
+                android:layout_width="match_parent"
+                android:text="Name"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="match_parent"
+                android:text=""
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24dp"/>
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
