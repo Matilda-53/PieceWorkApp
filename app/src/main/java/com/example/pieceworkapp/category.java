@@ -40,7 +40,12 @@ public class category extends navigation {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot)
+                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                    User user = dataSnapshot.getValue(User.class);
+                    list.add(user);
+                }
+                adapter.notifyDataSetChanged();
             }
 
             @Override
