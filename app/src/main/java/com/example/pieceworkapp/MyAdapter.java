@@ -30,12 +30,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
          User user = list.get(position);
-         holder.name.setText(user.getFullName());
+         holder.Fullname.setText(user.getFullName());
         holder.email.setText(user.getEmail());
-        holder.number.setText(user.getContactNumber());
+        holder.contactNumber.setText(user.getContactNumber());
         holder.profession.setText(user.getProfession());
         holder.category.setText(user.getCategory());
-        holder.yearOfExperience.setText(user.getYearsOfExperience());
+        holder.yearsOfExperience.setText(user.getYearsOfExperience());
 
     }
 
@@ -45,16 +45,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name, email, number, profession, category, yearOfExperience;
+        TextView Fullname, email, contactNumber, profession, category, yearsOfExperience;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.name);
+            Fullname = itemView.findViewById(R.id.name);
             email = itemView.findViewById(R.id.mail);
-            number = itemView.findViewById(R.id.number);
+            contactNumber = itemView.findViewById(R.id.number);
             profession = itemView.findViewById(R.id.pro);
-            category = itemView.findViewById(R.id.gory);
-            yearOfExperience = itemView.findViewById(R.id.year);
+            category = itemView.findViewById(R.id.choose);
+            yearsOfExperience = itemView.findViewById(R.id.Exp);
 
         }
     }
