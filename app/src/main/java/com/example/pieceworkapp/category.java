@@ -1,6 +1,7 @@
 package com.example.pieceworkapp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,13 @@ public class category extends navigation {
       ArrayList<User> list;
       DatabaseReference databaseReference;
       MyAdapter adapter;
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(category.this, createList.class));
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +60,8 @@ public class category extends navigation {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        })
+        });
+
 
     }
 }
