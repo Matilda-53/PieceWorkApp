@@ -39,7 +39,7 @@ public class category extends navigation {
         allocateActivityTitle("Category");
 
         recyclerView = findViewById(R.id.recycleView);
-        databaseReference = FirebaseDatabase.getInstance().getReference("users");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("users");
         list = new ArrayList<>();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new MyAdapter(this, list);
@@ -48,6 +48,7 @@ public class category extends navigation {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                list.clear();
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
 
                     User user = dataSnapshot.getValue(User.class);

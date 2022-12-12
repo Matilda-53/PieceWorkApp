@@ -53,8 +53,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             email = itemView.findViewById(R.id.mail);
             contactNumber = itemView.findViewById(R.id.number);
             profession = itemView.findViewById(R.id.pro);
-            category = itemView.findViewById(R.id.choose);
-            yearsOfExperience = itemView.findViewById(R.id.Exp);
+            category = itemView.findViewById(R.id.gory);
+            yearsOfExperience = itemView.findViewById(R.id.year);
 
         }
     }

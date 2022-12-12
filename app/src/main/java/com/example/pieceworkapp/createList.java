@@ -12,9 +12,17 @@ import androidx.annotation.NonNull;
 
 import com.example.pieceworkapp.databinding.ActivityCreateListBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.Objects;
 
 import javax.xml.transform.sax.SAXResult;
 
@@ -25,6 +33,8 @@ public class createList extends navigation {
   DatabaseReference databaseUsers;
 
     ActivityCreateListBinding activityCreateListBinding;
+
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +52,8 @@ public class createList extends navigation {
         profession = findViewById(R.id.professional);
         category = findViewById(R.id.choose);
         yearsOfExperience = findViewById(R.id.Exp);
-        databaseUsers = FirebaseDatabase.getInstance().getReference();
+        firebaseAuth = FirebaseAuth.getInstance();
+        databaseUsers = FirebaseDatabase.getInstance().getReference().child("users");
 
         btnCreateList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,20 +79,59 @@ public class createList extends navigation {
         String userProfession = profession.getText().toString();
         String userCategory = category.getText().toString();
         String userYears = yearsOfExperience.getText().toString();
-
         String id =databaseUsers.push().getKey();
 
-        User user = new User(username, userEmail, userContact, userProfession, userContact,userCategory, userYears);
-                databaseUsers.child("users").child(id).setValue(user)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()){
-                                    Toast.makeText(createList.this, "Successifully Created List", Toast.LENGTH_SHORT).show();
-                                }
+        User user = new User();
+        user.setCategory(userCategory);
+        user.setEmail(userEmail);
+        user.setContactNumber(userContact);
+        user.setProfession(userProfession);
+        user.setYearsOfExperience(userYears);
+        user.setFullName(username);
+        user.setUid(firebaseAuth.getUid());
 
-                            }
-                        });
+
+
+        HashMap<String, Object> mHashmap = new HashMap<>();
+        mHashmap.put("category", userCategory);
+        mHashmap.put("contactNumber", userContact);
+        mHashmap.put("email", userEmail);
+        mHashmap.put("fullName", username);
+        mHashmap.put("profession", userProfession);
+        mHashmap.put("uid", firebaseAuth.getUid());
+        mHashmap.put("yearsOfExperience", userYears);
+
+        databaseUsers.child(id).setValue(mHashmap).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+
+                Toast.makeText(createList.this, "successfully added user data", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+
+
+//                databaseUsers.addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot)
+//                    {
+//
+//
+//                        // Write a message to the
+//
+//
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error)
+//                    {
+//
+//                        Toast.makeText(createList.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+//                    }
+//                });
 
     }
 }

@@ -7,44 +7,66 @@ import com.google.firebase.database.IgnoreExtraProperties;
 public class User {
     private  String FullName;
     private  String email;
-    private  Integer contactNumber;
+    private  String contactNumber;
     private  String profession;
     private  String category;
-    private  Integer yearsOfExperience;
+    private  String yearsOfExperience;
+    private String uid;
 
-    public User(String username, String userEmail, String userContact, String userProfession, String contact, String userCategory, String userYears) {
-    }
-
-    public User(String fullName, String email, Integer contactNumber, String profession, String category, Integer yearsOfExperience) {
-        FullName = fullName;
-        this.email = email;
-        this.contactNumber = contactNumber;
-        this.profession = profession;
-        this.category = category;
-        this.yearsOfExperience = yearsOfExperience;
-    }
 
     public String getFullName() {
         return FullName;
+    }
+
+    public void setFullName(String fullName) {
+        FullName = fullName;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public Integer getContactNumber() {
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getContactNumber() {
         return contactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
     }
 
     public String getProfession() {
         return profession;
     }
 
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
     public String getCategory() {
         return category;
     }
 
-    public Integer getYearsOfExperience() {
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getYearsOfExperience() {
         return yearsOfExperience;
+    }
+
+    public void setYearsOfExperience(String yearsOfExperience) {
+        this.yearsOfExperience = yearsOfExperience;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }
