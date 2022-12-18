@@ -15,8 +15,8 @@ import java.util.ArrayList;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder>{
 
-    private Context context;
-    private ArrayList<Category2> list;
+    public Context context;
+    public ArrayList<Category2> list;
 
     public CategoryAdapter(Context context, ArrayList<Category2> list) {
         this.context = context;
@@ -27,7 +27,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.category_layout,parent, false);
-        return new CategoryAdapter.MyViewHolder(v);
+        return new MyViewHolder(v);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         return list.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView imageView;
         private TextView textView;
