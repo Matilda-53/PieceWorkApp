@@ -1,17 +1,17 @@
 package com.example.pieceworkapp;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.FrameLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -43,12 +43,14 @@ public class navigation extends AppCompatActivity implements NavigationView.OnNa
         switch (item.getItemId()){
 
             case R.id.home:
-                startActivity(new Intent(this, Home.class));
+                startActivity(new Intent(this, HomeActivity.class));
                 overridePendingTransition(0,0);
+
                 break;
             case R.id.inbox:
                 startActivity(new Intent(this, Inbox.class));
                 overridePendingTransition(0,0);
+
                 break;
 
             case R.id.createList:
