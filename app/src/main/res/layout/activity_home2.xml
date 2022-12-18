@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".HomeActivity">
+
+
+
+    <LinearLayout
+        android:id="@+id/linear_categories"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:id="@+id/search_editText"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+
+        <TextView
+            android:textSize="21sp"
+            android:text="Categories"
+            android:layout_marginTop="12dp"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:id="@+id/recycleView_categories"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
