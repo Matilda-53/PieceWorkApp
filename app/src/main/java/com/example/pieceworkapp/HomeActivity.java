@@ -2,6 +2,7 @@ package com.example.pieceworkapp;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,13 +11,15 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class HomeActivity extends navigation {
 
 
     private RecyclerView recyclerView;
     private TextInputEditText textInputEditText;
-
+    SearchView searchView;
     ArrayList<Category2> list;
     DatabaseReference databaseReference;
     CategoryAdapter adapter;
@@ -26,10 +29,10 @@ public class HomeActivity extends navigation {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home2);
-
         activityHomeBinding = ActivityHome2Binding.inflate(getLayoutInflater());
         setContentView(activityHomeBinding.getRoot());
         allocateActivityTitle("Home");
+        searchView = findViewById(R.id.search);
 
         recyclerView = findViewById(R.id.recycleView_categories);
         list = new ArrayList<>();
@@ -39,6 +42,28 @@ public class HomeActivity extends navigation {
         recyclerView.setLayoutManager(
                 new LinearLayoutManager(HomeActivity.this));
 
+        searchView.setOnQueryTextListener( new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filter(newText);
+                return true;
+            }
+        });
+
+    }
+
+    private void filter(String newText) {
+        List<Category2>filteredList = new ArrayList<>();
+        for (Category2 item: list){
+            if (item.getName().toLowerCase().contains(newText.toLowerCase());
+            filteredList.add(item);
+        }
+        MyAdapter.filterList(filteredList);
     }
 
     private ArrayList<Category2> getData()

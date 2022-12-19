@@ -89,7 +89,7 @@ public class createList extends navigation {
             @Override
             public void onSuccess(Void unused) {
 
-                Toast.makeText(createList.this, "successfully added user data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(createList.this, "successfully created list", Toast.LENGTH_SHORT).show();
 
             }
         });

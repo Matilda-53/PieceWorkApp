@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     Context context;
@@ -18,6 +19,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public MyAdapter(Context context, ArrayList<User> list) {
         this.context = context;
         this.list = list;
+    }
+
+    public static void filterList(List<Category2> filteredList) {
+
     }
 
     @NonNull
@@ -55,6 +60,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             profession = itemView.findViewById(R.id.pro);
             category = itemView.findViewById(R.id.gory);
             yearsOfExperience = itemView.findViewById(R.id.year);
+
+        }
+        public   void filterList(ArrayList<Category2>filteredList){
 
         }
     }

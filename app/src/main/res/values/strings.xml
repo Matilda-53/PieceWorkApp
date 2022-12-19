@@ -39,5 +39,6 @@
     <string name="choose_category">Choose category:</string>
     <string name="years_of_experience">Years of experience:</string>
     <string name="create_list1">Create List</string>
+    <string name="search">Search</string>
 
 </resources>
