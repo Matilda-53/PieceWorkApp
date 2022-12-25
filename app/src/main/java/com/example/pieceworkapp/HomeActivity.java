@@ -12,7 +12,6 @@ import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class HomeActivity extends navigation {
 
@@ -60,7 +59,7 @@ public class HomeActivity extends navigation {
     private void filter(String newText) {
         List<Category2>filteredList = new ArrayList<>();
         for (Category2 item: list){
-            if (item.getName().toLowerCase().contains(newText.toLowerCase());
+            if (item.getName().toLowerCase().contains(newText.toLowerCase()));
             filteredList.add(item);
         }
         MyAdapter.filterList(filteredList);

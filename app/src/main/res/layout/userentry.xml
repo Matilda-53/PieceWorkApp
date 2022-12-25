@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,118 +9,108 @@
     android:backgroundTint="@android:color/holo_blue_dark"
     android:layout_margin="16dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="vertical"
-        >
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_baseline_person_outline_24"
-            android:layout_gravity="left"
-            android:orientation ="vertical"
-            >
-        </ImageView>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            >
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:text="Name"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="24dp"/>
+        android:layout_height="wrap_content" >
 
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            >
-            <TextView
-                android:id="@+id/mail"
-                android:layout_width="match_parent"
-                android:text="Name"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="24dp"/>
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:id="@+id/img"
+                android:src="@drawable/ic_baseline_person_24"
+                android:layout_gravity="left"
+                android:orientation ="vertical"
+                android:background="@color/white"
+                tools:ignore="MissingConstraints" />
 
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            >
-            <TextView
-                android:id="@+id/number"
-                android:layout_width="match_parent"
-                android:text="Name"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="24dp"/>
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    app:layout_constraintLeft_toRightOf="@+id/img"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"
+                    android:text="Name"
+                    tools:ignore="MissingConstraints" />
 
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            >
-            <TextView
-                android:id="@+id/pro"
-                android:layout_width="match_parent"
-                android:text="Name"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="24dp">
-
-            </TextView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            >
-            <TextView
-                android:id="@+id/gory"
-                android:layout_width="match_parent"
-                android:text="Name"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="24dp"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            >
-            <TextView
-                android:id="@+id/year"
-                android:layout_width="match_parent"
-                android:text="Name"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="24dp"/>
+                <TextView
+                    android:id="@+id/mail"
+                    android:layout_below="@id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mail"
+                    app:layout_constraintLeft_toLeftOf="@+id/name"
+                    app:layout_constraintTop_toBottomOf="@+id/name"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"
+                    tools:ignore="MissingConstraints" />
 
 
-        </LinearLayout>
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Number"
+                    app:layout_constraintLeft_toLeftOf="@+id/mail"
+                    app:layout_constraintBottom_toBottomOf="@+id/mail"
+                    app:layout_constraintLeft_toBottomOf="parent"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"/>
+
+
+
+                <TextView
+                    android:id="@+id/pro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="profession"
+                    app:layout_constraintLeft_toLeftOf="@+id/number"
+                    app:layout_constraintBottom_toBottomOf="@+id/number"
+                    android:textColor="@color/white"
+                    android:textSize="24dp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/gory"
+                    android:layout_width="match_parent"
+                    android:text="category"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="@+id/pro"
+                    app:layout_constraintBottom_toBottomOf="@+id/pro"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"/>
+
+
+                <TextView
+                    android:id="@+id/year"
+                    android:layout_width="match_parent"
+                    android:text="years"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="@+id/gory"
+                    app:layout_constraintBottom_toBottomOf="@+id/gory"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn"
+                    android:layout_below= "@id/img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="message"
+                    android:gravity="end"
+                    app:layout_constraintLeft_toBottomOf="@id/img"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@+id/img"
+                    tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
