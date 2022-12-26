@@ -13,10 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+
     Context context;
     ArrayList<User>list;
 
-    public MyAdapter(Context context, ArrayList<User> list) {
+    public MyAdapter(Context context, ArrayList<User> list ) {
         this.context = context;
         this.list = list;
     }
@@ -54,12 +55,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            Fullname = itemView.findViewById(R.id.name);
-            email = itemView.findViewById(R.id.mail);
-            contactNumber = itemView.findViewById(R.id.number);
-            profession = itemView.findViewById(R.id.pro);
-            category = itemView.findViewById(R.id.gory);
-            yearsOfExperience = itemView.findViewById(R.id.year);
+            Fullname = itemView.findViewById(R.id.name_extra);
+            email = itemView.findViewById(R.id.mail_extra);
+            contactNumber = itemView.findViewById(R.id.number_extra);
+            profession = itemView.findViewById(R.id.pro_extra);
+            category = itemView.findViewById(R.id.gory_extra);
+            yearsOfExperience = itemView.findViewById(R.id.year_extra);
 
         }
         public   void filterList(ArrayList<Category2>filteredList){

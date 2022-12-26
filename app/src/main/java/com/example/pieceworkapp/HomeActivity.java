@@ -13,7 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends navigation {
+public class HomeActivity extends navigation implements RecycleviewInterface{
 
 
     private RecyclerView recyclerView;
@@ -84,5 +84,11 @@ public class HomeActivity extends navigation {
 
 
         return list;
+    }
+
+    @Override
+    public void OnclickItem(int position)
+    {
+
     }
 }

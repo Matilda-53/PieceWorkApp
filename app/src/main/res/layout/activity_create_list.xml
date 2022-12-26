@@ -3,234 +3,286 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".createList"
     android:background="@color/white"
     android:layout_margin="20dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:orientation="horizontal">
 
-
-        <TextView
-            android:id="@+id/list"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:text="@string/enter_your_details"
-            android:textColor="@color/black"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            tools:ignore="MissingConstraints" />
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_below="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/full_name"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:paddingBottom="2sp"
-            android:layout_marginStart="15sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            tools:ignore="InvalidId,MissingConstraints" />
+            <TextView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="@string/enter_your_details"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints" />
 
-        <EditText
-            android:padding="8dp"
-            android:id="@+id/text_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/name"
-            android:layout_marginStart="15sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
-            android:autofillHints=""
-            android:background="@drawable/input_bg"
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:drawablePadding="20sp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black" />
+            <TextView
+                android:id="@+id/name"
+                android:layout_below="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/full_name"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:paddingBottom="2sp"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                tools:ignore="InvalidId,MissingConstraints" />
 
-        <TextView
-            android:id="@+id/mail"
-            android:layout_below="@+id/text_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:layout_marginStart="15sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:text="@string/email_1"
-            android:textSize="20sp"
-            tools:ignore="InvalidId,MissingConstraints" />
+            <EditText
+                android:padding="8dp"
+                android:id="@+id/text_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:autofillHints=""
+                android:background="@drawable/input_bg"
+                android:backgroundTint="@android:color/holo_blue_dark"
+                android:drawablePadding="20sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
-        <EditText
-            android:id="@+id/MaILe"
-            android:padding="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/mail"
-            android:layout_marginStart="15sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
-            android:autofillHints=""
-            android:background="@drawable/input_bg"
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:drawablePadding="20sp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black" />
+            <TextView
+                android:id="@+id/mail"
+                android:layout_below="@+id/text_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="@string/email_1"
+                android:textSize="20sp"
+                tools:ignore="InvalidId,MissingConstraints" />
 
-        <TextView
-            android:id="@+id/contact"
-            android:layout_below="@+id/MaILe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Contact number:"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginStart="15sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            tools:ignore="InvalidId,MissingConstraints" />
+            <EditText
+                android:id="@+id/MaILe"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mail"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:autofillHints=""
+                android:background="@drawable/input_bg"
+                android:backgroundTint="@android:color/holo_blue_dark"
+                android:drawablePadding="20sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
-        <EditText
-            android:id="@+id/conta"
-            android:layout_width="match_parent"
-            android:padding="8dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/contact"
-            android:layout_marginStart="15sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/input_bg"
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:drawablePadding="20sp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black" />
+            <TextView
+                android:id="@+id/contact"
+                android:layout_below="@+id/MaILe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact number:"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                tools:ignore="InvalidId,MissingConstraints" />
 
-        <TextView
-            android:id="@+id/profession"
-            android:layout_below="@+id/conta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/enter_profession"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginStart="15sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            tools:ignore="InvalidId,MissingConstraints" />
+            <EditText
+                android:id="@+id/conta"
+                android:layout_width="match_parent"
+                android:padding="8dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contact"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/input_bg"
+                android:backgroundTint="@android:color/holo_blue_dark"
+                android:drawablePadding="20sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <TextView
+                android:id="@+id/profession"
+                android:layout_below="@+id/conta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_profession"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                tools:ignore="InvalidId,MissingConstraints" />
 
 
-        <EditText
-            android:id="@+id/professional"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profession"
-            android:padding="8dp"
-            android:layout_marginStart="15sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
-            android:autofillHints=""
-            android:background="@drawable/input_bg"
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:drawablePadding="20sp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black" />
+            <EditText
+                android:id="@+id/professional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profession"
+                android:padding="8dp"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:autofillHints=""
+                android:background="@drawable/input_bg"
+                android:backgroundTint="@android:color/holo_blue_dark"
+                android:drawablePadding="20sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
-        <TextView
-            android:id="@+id/catego"
-            android:layout_below="@+id/professional"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/choose_category"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginStart="15sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            tools:ignore="InvalidId,MissingConstraints" />
+            <TextView
+                android:id="@+id/catego"
+                android:layout_below="@+id/professional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/choose_category"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                tools:ignore="InvalidId,MissingConstraints"
+                />
 
-        <EditText
-            android:id="@+id/choose"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:layout_below="@id/catego"
-            android:layout_marginStart="15sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
-            android:autofillHints=""
-            android:background="@drawable/input_bg"
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:drawablePadding="20sp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black" />
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:padding="10dp"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/input_bg"
+                android:backgroundTint="@android:color/holo_blue_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/experience"
-            android:layout_below="@+id/choose"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/years_of_experience"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginStart="15sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            tools:ignore="InvalidId,MissingConstraints" />
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
 
-        <EditText
-            android:id="@+id/Exp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/experience"
-            android:layout_marginStart="15sp"
-            android:padding="8dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
-            android:autofillHints=""
-            android:background="@drawable/input_bg"
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:drawablePadding="20sp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black" />
+            </LinearLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnCreateList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Exp"
-            android:textSize="12sp"
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:text="@string/create_list1"
-            android:layout_marginStart="35sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"  />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnCategory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/btnCreateList"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="40dp"
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:text="Go to Categories"
-            android:textSize="12sp" />
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+
+<!--                android:layout_margin="16dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"-->
+<!--                >-->
+
+<!--                <AutoCompleteTextView-->
+
+<!--                    android:id="@+id/choose_autoComplete"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@id/catego"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:autofillHints=""-->
+<!--                    android:background="@drawable/input_bg"-->
+<!--                    android:backgroundTint="@android:color/holo_blue_dark"-->
+<!--                    android:drawablePadding="20sp"-->
+<!--                    android:inputType="none"-->
+<!--                    android:padding="8dp"-->
+<!--                    android:textColor="@color/black"-->
+
+<!--                    />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <TextView
+                android:id="@+id/experience"
+                android:layout_below="@+id/choose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/years_of_experience"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                tools:ignore="InvalidId,MissingConstraints,NotSibling" />
+
+            <EditText
+                android:id="@+id/Exp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/experience"
+                android:layout_marginStart="15dp"
+                android:padding="8dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:autofillHints=""
+                android:background="@drawable/input_bg"
+                android:backgroundTint="@android:color/holo_blue_dark"
+                android:drawablePadding="20sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCreateList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:backgroundTint="@android:color/holo_blue_dark"
+                    android:text="@string/create_list1"
+                    android:layout_marginStart="35sp"
+                    android:layout_marginTop="15dp"
+                    tools:ignore="MissingConstraints" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_alignBaseline="@id/btnCreateList"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@android:color/holo_blue_dark"
+                    android:text="Go to Categories"
+                    android:textSize="12sp"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </LinearLayout>
+
+
 
     </RelativeLayout>
 

@@ -44,6 +44,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
             public void onClick(View view) {
 
 
+
 //                Intent intent = new Intent();
 //                intent.putExtra("categoryName",category2.getName());
 //                intent.putExtra("pos",holder.getLayoutPosition());
