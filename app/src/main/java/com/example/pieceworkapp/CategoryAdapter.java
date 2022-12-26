@@ -1,6 +1,7 @@
 package com.example.pieceworkapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +12,17 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+
 import java.util.ArrayList;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder>{
 
     public Context context;
     public ArrayList<Category2> list;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
 
     public CategoryAdapter(Context context, ArrayList<Category2> list) {
         this.context = context;
@@ -38,19 +44,47 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         holder.textView.setText(category2.getName());
         holder.imageView.setImageResource(category2.getDrawable());
 
+        String categoryName = category2.getCategory();
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
+                if(holder.getLayoutPosition()==0)
+                {
+                    Intent intent = new Intent(context, category.class);
+                    intent.putExtra("categoryName","engines");
 
-//                Intent intent = new Intent();
-//                intent.putExtra("categoryName",category2.getName());
-//                intent.putExtra("pos",holder.getLayoutPosition());
-//                context.startActivity(intent);
+                    context.startActivity(intent);
 
-                Toast.makeText(context, ""+category2.getName(), Toast.LENGTH_SHORT).show();
+                }else if(holder.getLayoutPosition()==1)
+                {
+                    Intent intent = new Intent(context, category.class);
+                    intent.putExtra("categoryName","edu");
+                    context.startActivity(intent);
+
+                }else if (holder.getLayoutPosition()==2)
+                {
+                    Intent intent = new Intent(context, category.class);
+                    intent.putExtra("categoryName","health");
+                    context.startActivity(intent);
+
+                }else if(holder.getLayoutPosition()==3)
+                {
+                    Intent intent = new Intent(context, category.class);
+                    intent.putExtra("categoryName","comms");
+                    context.startActivity(intent);
+
+                }else
+                {
+                    Toast.makeText(context, ""+category2.getName(), Toast.LENGTH_SHORT).show();
+                }
+
+
+
+
 
 
             }

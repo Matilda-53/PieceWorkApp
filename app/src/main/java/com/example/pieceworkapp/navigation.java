@@ -59,7 +59,9 @@ public class navigation extends AppCompatActivity implements NavigationView.OnNa
                 break;
 
             case R.id.category:
-                startActivity(new Intent(this, category.class));
+                Intent intent = new Intent(this, category.class);
+                intent.putExtra("categoryName","all");
+                this.startActivity(intent);
                 overridePendingTransition(0,0);
                 break;
         }

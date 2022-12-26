@@ -4,6 +4,7 @@ package com.example.pieceworkapp;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -24,6 +25,8 @@ public class category extends navigation {
       ArrayList<User> list;
       DatabaseReference databaseReference;
       MyAdapter adapter;
+      Bundle extras;
+      String sReceiver;
 
     @Override
     public void onBackPressed() {
@@ -45,26 +48,137 @@ public class category extends navigation {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new MyAdapter(this, list);
         recyclerView.setAdapter(adapter);
+        extras = getIntent().getExtras();
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @SuppressLint("NotifyDataSetChanged")
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                list.clear();
-                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+        sReceiver = extras.getString("categoryName");
+        initLayouts();
 
-                    User user = dataSnapshot.getValue(User.class);
-                    list.add(user);
+
+    }
+
+    private void initLayouts()
+    {
+        if(extras!=null && sReceiver.contains("engines"))
+        {
+            databaseReference.orderByChild("category").equalTo("Engineering").
+                    addValueEventListener(new ValueEventListener() {
+                @SuppressLint("NotifyDataSetChanged")
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    list.clear();
+                    for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                        User user = dataSnapshot.getValue(User.class);
+                        list.add(user);
+                    }
+                    adapter.notifyDataSetChanged();
                 }
-                adapter.notifyDataSetChanged();
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError error)
+                {
+                    Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
 
-            }
-        });
+                }
+            });
+
+        }else if(extras!=null && sReceiver.contains("edu"))
+        {
+            databaseReference.orderByChild("category").equalTo("Education").
+                    addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
 
 
+        }else if(extras!=null && sReceiver.contains("health"))
+        {
+            databaseReference.orderByChild("category").equalTo("Health").
+                    addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+
+        }else if(extras!=null && sReceiver.contains("comms"))
+        {
+            databaseReference.orderByChild("category").equalTo("communication").
+                    addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }else if(extras!=null && sReceiver.contains("all"))
+        {
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }
     }
 }
