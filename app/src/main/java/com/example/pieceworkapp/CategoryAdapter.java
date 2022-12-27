@@ -77,14 +77,67 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
                     intent.putExtra("categoryName","comms");
                     context.startActivity(intent);
 
-                }else
+                }
+                else if(holder.getLayoutPosition()==4)
+                {
+                    Intent intent = new Intent(context, category.class);
+                    intent.putExtra("categoryName","agri");
+                    context.startActivity(intent);
+
+                }else if(holder.getLayoutPosition()==5)
+                {
+                    Intent intent = new Intent(context, category.class);
+                    intent.putExtra("categoryName","arch");
+                    context.startActivity(intent);
+
+                }else if(holder.getLayoutPosition()==6)
+                {
+                    Intent intent = new Intent(context, category.class);
+                    intent.putExtra("categoryName","Busi");
+                    context.startActivity(intent);
+
+                }else if(holder.getLayoutPosition()==7)
+                {
+                    Intent intent = new Intent(context, category.class);
+                    intent.putExtra("categoryName","fin");
+                    context.startActivity(intent);
+
+                }else if(holder.getLayoutPosition()==8)
+                {
+                    Intent intent = new Intent(context, category.class);
+                    intent.putExtra("categoryName","hosp");
+                    context.startActivity(intent);
+
+                }else if(holder.getLayoutPosition()==9)
+                {
+                    Intent intent = new Intent(context, category.class);
+                    intent.putExtra("categoryName","inf");
+                    context.startActivity(intent);
+
+                }else if(holder.getLayoutPosition()==10)
+                {
+                    Intent intent = new Intent(context, category.class);
+                    intent.putExtra("categoryName","manf");
+                    context.startActivity(intent);
+
+                }else if(holder.getLayoutPosition()==11)
+                {
+                    Intent intent = new Intent(context, category.class);
+                    intent.putExtra("categoryName","mark");
+                    context.startActivity(intent);
+
+                }else if(holder.getLayoutPosition()==12)
+                {
+                    Intent intent = new Intent(context, category.class);
+                    intent.putExtra("categoryName","log");
+                    context.startActivity(intent);
+
+                }
+
+                else
                 {
                     Toast.makeText(context, ""+category2.getName(), Toast.LENGTH_SHORT).show();
                 }
-
-
-
-
 
 
             }
@@ -108,6 +161,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
             imageView = itemView.findViewById(R.id.img_ctgory);
             textView = itemView.findViewById(R.id.txt_ctgory);
+
         }
     }
 }

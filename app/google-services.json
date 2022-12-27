@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "74576948968",
+    "firebase_url": "https://pieceworkapp-default-rtdb.firebaseio.com",
     "project_id": "pieceworkapp",
     "storage_bucket": "pieceworkapp.appspot.com"
   },

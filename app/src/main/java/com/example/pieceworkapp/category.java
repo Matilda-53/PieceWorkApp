@@ -28,6 +28,7 @@ public class category extends navigation {
       Bundle extras;
       String sReceiver;
 
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -42,6 +43,7 @@ public class category extends navigation {
         setContentView(activityCategoryBinding.getRoot());
         allocateActivityTitle("Category");
 
+
         recyclerView = findViewById(R.id.recycleView);
         databaseReference = FirebaseDatabase.getInstance().getReference().child("users");
         list = new ArrayList<>();
@@ -52,6 +54,8 @@ public class category extends navigation {
 
         sReceiver = extras.getString("categoryName");
         initLayouts();
+
+//        msg_extra.setOnClickListener(view -> startActivity(new Intent(this, Inbox.class)));
 
 
     }
@@ -156,7 +160,250 @@ public class category extends navigation {
                         }
                     });
 
-        }else if(extras!=null && sReceiver.contains("all"))
+        }else if(extras!=null && sReceiver.contains("agr"))
+        {
+            databaseReference.orderByChild("category").equalTo("Agriculture").
+                    addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }else if(extras!=null && sReceiver.contains("arch"))
+        {
+            databaseReference.orderByChild("category").equalTo("Architecture & Construction").
+                    addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }else if(extras!=null && sReceiver.contains("Busi"))
+        {
+            databaseReference.orderByChild("category").equalTo("Business Management").
+                    addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }else if(extras!=null && sReceiver.contains("fin"))
+        {
+            databaseReference.orderByChild("category").equalTo("Finance").
+                    addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }else if(extras!=null && sReceiver.contains("hosp"))
+        {
+            databaseReference.orderByChild("category").equalTo("Hospitality & Tourism").
+                    addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }else if(extras!=null && sReceiver.contains("inf"))
+        {
+            databaseReference.orderByChild("category").equalTo("Information & Technology").
+                    addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }else if(extras!=null && sReceiver.contains("fin"))
+        {
+            databaseReference.orderByChild("category").equalTo("Finance").
+                    addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }else if(extras!=null && sReceiver.contains("manf"))
+
+        {
+            databaseReference.orderByChild("category").equalTo("Manufacturing").
+                    addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }else if(extras!=null && sReceiver.contains("mark"))
+        {
+            databaseReference.orderByChild("category").equalTo("Marketing").
+                    addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }else if(extras!=null && sReceiver.contains("log"))
+        {
+            databaseReference.orderByChild("category").equalTo("Logistics").
+                    addValueEventListener(new ValueEventListener() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list.clear();
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+
+                                User user = dataSnapshot.getValue(User.class);
+                                list.add(user);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+                            Toast.makeText(category.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }
+
+        else if(extras!=null && sReceiver.contains("all"))
         {
             databaseReference.addValueEventListener(new ValueEventListener() {
                         @SuppressLint("NotifyDataSetChanged")

@@ -14,6 +14,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent">
 
 
@@ -21,9 +22,12 @@
            android:id="@+id/search"
            android:layout_width="match_parent"
            android:layout_height="60dp"
+           android:hint="@string/search"
            android:background="@drawable/input_bg"
            android:layout_margin="20dp"
            >
+
+
 
        </androidx.appcompat.widget.SearchView>
 

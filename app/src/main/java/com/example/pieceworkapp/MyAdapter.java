@@ -16,10 +16,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     Context context;
     ArrayList<User>list;
+//     Button button;
+
+
 
     public MyAdapter(Context context, ArrayList<User> list ) {
         this.context = context;
         this.list = list;
+//        this.button = button;
     }
 
     public static void filterList(List<Category2> filteredList) {
@@ -31,6 +35,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.userentry,parent, false);
         return new MyViewHolder(v);
+
+
     }
 
     @Override
@@ -42,8 +48,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.profession.setText(user.getProfession());
         holder.category.setText(user.getCategory());
         holder.yearsOfExperience.setText(user.getYearsOfExperience());
+//
+//        String addresses = Inbox.getInbox();
+//
+//        holder.msg_extra.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent= new Intent(String.valueOf(Inbox.class));
+//                intent.putExtra("addresses", "user.getEmail()" );
+//                context.startActivity(intent);
+//
+//            }
 
-    }
+//        });
+        };
+
+
+
 
     @Override
     public int getItemCount() {
@@ -52,6 +73,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView Fullname, email, contactNumber, profession, category, yearsOfExperience;
+//        Button msg_extra;
+//        Button button;
+        private ArrayList<Category2> list;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -61,9 +85,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             profession = itemView.findViewById(R.id.pro_extra);
             category = itemView.findViewById(R.id.gory_extra);
             yearsOfExperience = itemView.findViewById(R.id.year_extra);
+//            msg_extra = button.findViewById(R.id.msg_extra);
+
 
         }
         public   void filterList(ArrayList<Category2>filteredList){
+            list = filteredList;
+            notify();
 
         }
     }

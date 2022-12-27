@@ -40,5 +40,12 @@
     <string name="years_of_experience">Years of experience:</string>
     <string name="create_list1">Create List</string>
     <string name="search">Search</string>
+    <string name="to">To</string>
+    <string name="email_address">email address</string>
+    <string name="subject">Subject</string>
+    <string name="sub">Subject</string>
+    <string name="message">Message</string>
+    <string name="email_address1">email address</string>
+    <string name="send">Send</string>
 
 </resources>

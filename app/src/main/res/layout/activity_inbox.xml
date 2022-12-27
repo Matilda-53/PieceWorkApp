@@ -3,17 +3,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Inbox"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:layout_gravity="center"
+    >
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20sp"
+    >
 
     <TextView
         android:id="@+id/in_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/in_box"
-        android:textSize="40sp"
-        android:layout_centerInParent="true"/>
+        android:text="@string/to"
+        android:textSize="21sp"
+        android:layout_margin="16dp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
 
+    <EditText
+        android:id="@+id/emailAddress"
+        android:layout_below="@+id/in_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:hint="@string/email_address"
+        android:textStyle="italic"
+        android:textColor="@color/black"
+        android:textColorHint="@color/common_google_signin_btn_text_light"
+        android:background="@drawable/input_bg"
+        android:layout_marginStart="15sp"
+        android:layout_marginTop="15dp"
+        android:padding="12dp"
+        android:drawableBottom="@color/black"
+        android:layout_marginEnd="15dp"
+        >
+
+    </EditText>
+
+
+
+
+    <TextView
+        android:id="@+id/subject"
+        android:layout_below="@+id/email_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subject"
+        android:textSize="21sp"
+        android:layout_margin="16dp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:textColor="@color/black"
+        android:hint="@string/sub"
+        android:textStyle="italic"
+        android:textColorHint="@color/common_google_signin_btn_text_light"
+        android:background="@drawable/input_bg"
+        android:padding="12dp"
+        android:inputType="">
+
+    </EditText>
+
+
+    <TextView
+        android:id="@+id/messagebox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/message"
+        android:textSize="21sp"
+        android:layout_margin="16dp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/msage"
+        android:layout_below="@+id/messagebox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:hint="Enter message here"
+        android:textColorHint="@color/common_google_signin_btn_text_light"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:gravity="start"
+        android:background="@drawable/input_bg"
+
+        android:lines="10"
+        android:inputType="">
+
+    </EditText>
+
+
+    <Button
+        android:id="@+id/sendBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_margin="20dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+
+        >
+
+    </Button>
+</LinearLayout>
 
 </RelativeLayout>
