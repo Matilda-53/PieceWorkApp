@@ -29,6 +29,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         this.list = list;
     }
 
+
+    public void filterList(ArrayList<Category2> filterlist) {
+        // below line is to add our filtered
+        // list in our course array list.
+        list = filterlist;
+        // below line is to notify our adapter
+        // as change in recycler view data.
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

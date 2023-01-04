@@ -61,6 +61,7 @@ public class category extends navigation {
 //        msg_extra.setOnClickListener(view -> startActivity(new Intent(this, Inbox.class)));
 
 
+
     }
 
     private void initLayouts()

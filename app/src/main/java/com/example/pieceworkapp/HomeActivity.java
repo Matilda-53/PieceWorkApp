@@ -1,6 +1,7 @@
 package com.example.pieceworkapp;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,7 +12,6 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeActivity extends navigation{
 
@@ -41,6 +41,7 @@ public class HomeActivity extends navigation{
         recyclerView.setLayoutManager(
                 new LinearLayoutManager(HomeActivity.this));
 
+
         searchView.setOnQueryTextListener( new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -56,13 +57,37 @@ public class HomeActivity extends navigation{
 
     }
 
-    private void filter(String newText) {
-        List<Category2>filteredList = new ArrayList<>();
-        for (Category2 item: list){
-            if (item.getName().toLowerCase().contains(newText.toLowerCase()));
-            filteredList.add(item);
+//    private void filter(String newText) {
+//        List<Category2>filteredList = new ArrayList<>();
+//        for (Category2 item: list){
+//            if (item.getName().toLowerCase().contains(newText.toLowerCase()));
+//            filteredList.add(item);
+//        }
+//        MyAdapter.filterList(filteredList);
+//    }
+
+    private void filter(String text) {
+        // creating a new array list to filter our data.
+        ArrayList<Category2> filteredlist = new ArrayList<Category2>();
+
+        // running a for loop to compare elements.
+        for (Category2 item : list) {
+            // checking if the entered string matched with any item of our recycler view.
+            if (item.getName().toLowerCase().contains(text.toLowerCase())) {
+                // if the item is matched we are
+                // adding it to our filtered list.
+                filteredlist.add(item);
+            }
         }
-        MyAdapter.filterList(filteredList);
+        if (filteredlist.isEmpty()) {
+            // if no item is added in filtered list we are
+            // displaying a toast message as no data found.
+            Toast.makeText(this, "No Data Found..", Toast.LENGTH_SHORT).show();
+        } else {
+            // at last we are passing that filtered
+            // list to our adapter class.
+            adapter.filterList(filteredlist);
+        }
     }
 
     private ArrayList<Category2> getData()

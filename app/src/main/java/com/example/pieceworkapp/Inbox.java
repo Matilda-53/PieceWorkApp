@@ -2,7 +2,6 @@ package com.example.pieceworkapp;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -17,6 +16,10 @@ public class Inbox extends navigation {
         return getInbox();
     }
 
+    Bundle extras;
+    String s, mail_str;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,20 @@ public class Inbox extends navigation {
         activityInboxBinding = ActivityInboxBinding.inflate(getLayoutInflater());
         setContentView(activityInboxBinding.getRoot());
         allocateActivityTitle("Inbox");
+
+        extras = getIntent().getExtras();
+        s = extras.getString("userData");
+
+        if(s.contains("client"))
+        {
+
+            mail_str = getIntent().getStringExtra("mailUser");
+
+            activityInboxBinding.emailAddress.setText(mail_str);
+            activityInboxBinding.emailAddress.setEnabled(false);
+
+
+        }
 
         activityInboxBinding.sendBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -35,13 +52,16 @@ public class Inbox extends navigation {
                 String subject = activityInboxBinding.subjects.getText().toString();
                 String message = activityInboxBinding.messagebox.getText().toString();
 
+//
+//                String[] addresses = email.split(",");
 
-                String[] addresses = email.split(",");
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
+                intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+                intent.putExtra(Intent.EXTRA_TEXT, message);
 
-                Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setData(Uri.parse("mailto:"));
-                intent.putExtra(Intent.EXTRA_SUBJECT, "subjects");
-                intent.putExtra(Intent.EXTRA_SUBJECT, "messagebox");
+                // set type of intent
+                intent.setType("message/rfc822");
 
                 if (intent.resolveActivity(getPackageManager()) != null) {
 

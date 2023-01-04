@@ -47,12 +47,7 @@ public class navigation extends AppCompatActivity implements NavigationView.OnNa
                 overridePendingTransition(0,0);
 
                 break;
-            case R.id.inbox:
-                startActivity(new Intent(this, Inbox.class));
-                overridePendingTransition(0,0);
 
-
-                break;
 
             case R.id.createList:
                 startActivity(new Intent(this, createList.class));

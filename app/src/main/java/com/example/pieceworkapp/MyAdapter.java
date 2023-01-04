@@ -1,9 +1,11 @@
 package com.example.pieceworkapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -51,16 +53,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 //
 //        String addresses = Inbox.getInbox();
 //
-//        holder.msg_extra.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent= new Intent(String.valueOf(Inbox.class));
-//                intent.putExtra("addresses", "user.getEmail()" );
-//                context.startActivity(intent);
-//
-//            }
+        holder.msg_extra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(context, Inbox.class);
+                intent.putExtra("mailUser", user.getEmail() );
+                intent.putExtra("userData", "client" );
+                context.startActivity(intent);
 
-//        });
+            }
+
+        });
         };
 
 
@@ -73,7 +76,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView Fullname, email, contactNumber, profession, category, yearsOfExperience;
-//        Button msg_extra;
+        Button msg_extra;
 //        Button button;
         private ArrayList<Category2> list;
 
@@ -85,7 +88,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             profession = itemView.findViewById(R.id.pro_extra);
             category = itemView.findViewById(R.id.gory_extra);
             yearsOfExperience = itemView.findViewById(R.id.year_extra);
-//            msg_extra = button.findViewById(R.id.msg_extra);
+            msg_extra = itemView.findViewById(R.id.msg_extra);
 
 
         }
