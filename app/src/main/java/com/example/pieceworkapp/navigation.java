@@ -58,6 +58,10 @@ public class navigation extends AppCompatActivity implements NavigationView.OnNa
                 startActivity(new Intent(this, createList.class));
                 overridePendingTransition(0,0);
                 break;
+            case R.id.LogOut:
+                startActivity(new Intent(this, MainActivity.class));
+                overridePendingTransition(0,0);
+                break;
 
             case R.id.category:
                 Intent intent = new Intent(this, category.class);

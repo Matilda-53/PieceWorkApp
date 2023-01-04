@@ -4,6 +4,7 @@ package com.example.pieceworkapp;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,7 @@ public class category extends navigation {
       MyAdapter adapter;
       Bundle extras;
       String sReceiver;
+      private Button message;
 
 
     @Override
@@ -51,6 +53,7 @@ public class category extends navigation {
         adapter = new MyAdapter(this, list);
         recyclerView.setAdapter(adapter);
         extras = getIntent().getExtras();
+        message = findViewById(R.id.msg_extra);
 
         sReceiver = extras.getString("categoryName");
         initLayouts();
