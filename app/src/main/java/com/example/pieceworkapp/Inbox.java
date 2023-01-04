@@ -32,7 +32,7 @@ public class Inbox extends navigation {
             public void onClick(View view) {
 
                 String email = activityInboxBinding.emailAddress.getText().toString();
-                String subject = activityInboxBinding.sub.getText().toString();
+                String subject = activityInboxBinding.subjects.getText().toString();
                 String message = activityInboxBinding.messagebox.getText().toString();
 
 
@@ -40,10 +40,11 @@ public class Inbox extends navigation {
 
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse("mailto:"));
-                intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-                intent.putExtra(Intent.EXTRA_SUBJECT, message);
+                intent.putExtra(Intent.EXTRA_SUBJECT, "subjects");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "messagebox");
 
                 if (intent.resolveActivity(getPackageManager()) != null) {
+
                     startActivity(intent);
 
                 } else {

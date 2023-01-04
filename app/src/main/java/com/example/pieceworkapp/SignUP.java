@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class SignUP extends AppCompatActivity {
      TextView alreadyHaveAccount;
      EditText fullname, Username2, Email, Password1, ConfirmPassword;
-     Button nbtRegister;
+     Button btnRegister;
      String emailPattern = "[a-zA-Z0-9,_-]+@[a-z]+\\.+[a-z]+";
      ProgressDialog progressDialog;
      FirebaseAuth mAuth;
